@@ -1,39 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Links</title>
+    <link rel="stylesheet" href="style.css"> <!-- Referencia al archivo CSS externo -->
+</head>
+<body>
+    <h1>Mensajes Recibidos</h1>
 
-            <!DOCTYPE html>
-            <html lang="es">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Meus Links</title>
-                <link rel="stylesheet" href="style.css"> <!-- Referencia al archivo CSS externo -->
-            </head>
-            <body>
-                <h1>Mensajes Recibidos</h1>
-        
-        <div class="message">
-            <p class="message-number">#000</p>
-            
+    <!-- Primer mensaje -->
+    <div class="message">
+        <p class="message-number">#000</p>
         <div class="carousel">
             <div class="carousel-images">
-                <img src="https://via.placeholder.com/400" alt="Imagen 1" class="carousel-image active"><img src="https://via.placeholder.com/400" alt="Imagen 2" class="carousel-image "><img src="https://via.placeholder.com/400" alt="Imagen 3" class="carousel-image ">
+                <img src="https://lojasimperio-s3.s3.amazonaws.com/8d7adaf0-2eec-466b-a208-f104a0dfaa55.webp" alt="Imagen 1" class="carousel-image active">
+                <img src="https://via.placeholder.com/400" alt="Imagen 2" class="carousel-image">
+                <img src="https://via.placeholder.com/400" alt="Imagen 3" class="carousel-image">
             </div>
             <button class="carousel-prev"><</button>
             <button class="carousel-next">></button>
         </div>
-     <!-- Insertar el carrusel aquí (ARRIBA) -->
-            <p><strong>Enlace:</strong> <a href="https://s.shopee.com.br/gB9fAXENt" target="_blank">https://s.shopee.com.br/gB9fAXENt</a></p>
-            <p class="description"><strong>Descripción:</strong>
-                🛍 Base mate Boca Rosa Beauty By Payot  Aproximando-se da data<br><br>❌ De: ~R$44,99~<br>✅ *Por: R$22,00😱*<br><br>👉Compre Aqui👇<br>https://s.shopee.com.br/gB9fAXENt<br><br>⚠️ Promoção pode acabar a qualquer momento
-                <a href="https://s.shopee.com.br/gB9fAXENt" target="_blank" class="action-button">Comprar Agora</a>
-                ⚠️ Promoção pode acabar a qualquer momento
-            </p>
+        <p><strong>Enlace:</strong> <a href="https://s.shopee.com.br/gB9fAXENt" target="_blank">https://s.shopee.com.br/gB9fAXENt</a></p>
+        <p class="description"><strong>Descripción:</strong>
+            🛍 Base mate Boca Rosa Beauty By Payot Aproximando-se da data<br><br>❌ De: ~R$44,99~<br>✅ *Por: R$22,00😱*<br><br>👉Compre Aqui👇<br>https://s.shopee.com.br/gB9fAXENt<br><br>⚠️ Promoção pode acabar a qualquer momento
+            <a href="https://s.shopee.com.br/gB9fAXENt" target="_blank" class="action-button">Comprar Agora</a>
+            ⚠️ Promoção pode acabar a qualquer momento
+        </p>
+    </div>
+
+    <!-- Segundo mensaje -->
+    <div class="message">
+        <p class="message-number">#001</p>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="https://via.placeholder.com/400" alt="Imagen 1" class="carousel-image active">
+                <img src="https://via.placeholder.com/400" alt="Imagen 2" class="carousel-image">
+                <img src="https://via.placeholder.com/400" alt="Imagen 3" class="carousel-image">
+            </div>
+            <button class="carousel-prev"><</button>
+            <button class="carousel-next">></button>
         </div>
-    
-            </body>
-            </html>
-        
+        <p><strong>Enlace:</strong> <a href="https://s.shopee.com.br/7052M6wq5m" target="_blank">https://s.shopee.com.br/7052M6wq5m</a></p>
+        <p class="description"><strong>Descripción:</strong>
+            🚨 🚨 ATENCIÓN 🚨🚨<br>       *VOLTOUUUUUUU 😳*<br><br>🛍️ ￼Kit Desmaia Cabelo Completo Forever Liss<br><br>❌ ~De: 231,99~<br>✅ *POOr: 99,84*<br><br>compre aqui:https://s.shopee.com.br/7052M6wq5m<br><br>🎟️ *Resgate aqui o cupom de 20 OFF* https://s.shopee.com.br/LY5T5u533
+            <a href="https://s.shopee.com.br/7052M6wq5m" target="_blank" class="action-button">Comprar Agora</a>
+            ⚠️ Promoção pode acabar a qualquer momento
+        </p>
+    </div>
+
+    <!-- Script para el carrusel -->
+    <script>
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const images = carousel.querySelectorAll('.carousel-image');
+            let currentIndex = 0;
+
+            // Mostrar la imagen actual
+            function showImage(index) {
+                images.forEach((img, i) => img.classList.toggle('active', i === index));
+            }
+
+            // Botón "Anterior"
+            carousel.querySelector('.carousel-prev').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+
+            // Botón "Siguiente"
+            carousel.querySelector('.carousel-next').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+
+            // Mostrar la primera imagen al cargar
+            showImage(currentIndex);
+        });
+    </script>
+</body>
+</html>
         <div class="message">
-            <p class="message-number">#001</p>
+            <p class="message-number">#002</p>
             
         <div class="carousel">
             <div class="carousel-images">
