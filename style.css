@@ -1,117 +1,157 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f4f4f9, #e0eafc);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
 
-        /* Estilo global */
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #f4f4f9, #e0eafc);
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
 
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-size: 2em;
-            letter-spacing: 1px;
-        }
+/* Estilo de los bloques de mensaje */
+.message {
+    background: #fff;
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
 
-        /* Estilo dos blocos de mensagem */
-        .message {
-            background: #fff;
-            margin-bottom: 25px;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
+.message:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
 
-        .message:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
+/* Número de mensaje */
+.message-number {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff7f50;
+    margin-bottom: 10px;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-        /* Número da mensagem */
-        .message-number {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #ff7f50;
-            margin-bottom: 10px;
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            background: #fff;
-            padding: 5px 10px;
-            border-radius: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+/* Descripción */
+.description {
+    white-space: pre-wrap;
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #555;
+}
 
-        /* Descrição */
-        .description {
-            white-space: pre-wrap;
-            margin-top: 10px;
-            font-size: 0.95em;
-            color: #555;
-        }
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        /* Links */
-        a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-        }
+a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
 
-        a:hover {
-            text-decoration: underline;
-            color: #2980b9;
-        }
+/* Precios */
+.description strong {
+    color: #2c3e50;
+}
 
-        /* Preços */
-        .description strong {
-            color: #2c3e50;
-        }
+.description span.promo-price {
+    color: #e74c3c;
+    font-size: 1.1em;
+    font-weight: bold;
+}
 
-        .description span.promo-price {
-            color: #e74c3c;
-            font-size: 1.1em;
-            font-weight: bold;
-        }
+/* Botones de acción */
+.action-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #ff7f50, #ff6347);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
 
-        /* Botões de ação */
-        .action-button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: linear-gradient(to right, #ff7f50, #ff6347);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
+.action-button:hover {
+    background: linear-gradient(to right, #ff6347, #ff4500);
+}
 
-        .action-button:hover {
-            background: linear-gradient(to right, #ff6347, #ff4500);
-        }
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        /* Ícone de promoção */
-        .promo-icon {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background: #e74c3c;
-            color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            font-size: 1.2em;
-            margin-right: 10px;
-        }
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-image {
+    min-width: 100%;
+    height: auto;
+    display: none;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+/* Botones de navegación */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
