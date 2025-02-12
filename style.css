@@ -99,9 +99,7 @@ a:hover {
 
 .action-button:hover {
     background: linear-gradient(to right, #ff6347, #ff4500);
-}
-
-/* Carrusel */
+}/* Carrusel */
 .carousel {
     position: relative;
     width: 100%;
