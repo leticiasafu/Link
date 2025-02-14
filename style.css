@@ -90,11 +90,20 @@ a:hover {
     background: linear-gradient(to right, #ff6347, #ff4500);
 }
 
+/* Contêiner de imagens */
+.image-container {
+    max-width: 100%;
+    margin: 15px 0;
+    text-align: center; /* Centralizar a imagem */
+}
+
 /* Imagens */
 .message-image {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
-    margin: 15px 0;
+    max-height: 400px; /* Limitar a altura máxima */
+    object-fit: cover; /* Manter proporções da imagem */
     display: block;
+    margin: 0 auto; /* Centralizar horizontalmente */
 }
