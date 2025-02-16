@@ -12,25 +12,40 @@ body {
     color: #333;
     line-height: 1.6;
     padding: 20px;
+    margin: 0 auto; /* Centralizar o conteúdo */
+    max-width: 1200px; /* Limitar a largura máxima da página */
 }
 
+/* Estilo do título */
 h1 {
     text-align: center;
     color: #2c3e50;
     margin-bottom: 30px;
-    font-size: 2em;
+    font-size: 1.8em;
     letter-spacing: 1px;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Contêiner principal para os blocos de mensagem */
+.message-container {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
 }
 
 /* Estilo dos blocos de mensagem */
 .message {
     background: #fff;
-    margin-bottom: 25px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
+    flex: 1;
+    min-width: 150px;
+    cursor: pointer;
+    height: auto;
 }
 
 .message:hover {
@@ -38,46 +53,89 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Número de mensagem */
-.message-number {
-    font-size: 1.2em;
+/* Versão Compacta */
+.message-compact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.message-compact, .message-expanded {
+    transition: all 0.3s ease;
+}
+/* Versão Compacta */
+.message-compact .message-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px; /* Altura reduzida para a versão compacta */
+    object-fit: cover;
+    margin-bottom: 0px;
+    display: block; /* Garante que a imagem seja renderizada */
+}
+
+/* Versão Expandida */
+.message.fullscreen .message-image {
+    max-height: 400px; /* Altura maior para a versão expandida */
+    margin-bottom: 0px;
+    display: block; /* Garante que a imagem seja renderizada */
+}
+
+
+.message-compact .description-short {
+    font-size: 0.8em;
+    color: #555;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.message-compact .price {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.message-compact .discounted-price {
+    color: red;
+    font-weight: bold;
+}
+
+.message-compact .original-price {
+    text-decoration: line-through;
+    color: #aaa;
+    font-size: 0.7em;
+}
+
+.message-compact .discount {
+    color: green;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+/* Versão Expandida */
+.message-expanded {
+    display: none;
+    padding: 10px;
+}
+
+.message-expanded .message-number {
+    font-size: 1em;
     font-weight: bold;
     color: #ff7f50;
     margin-bottom: 10px;
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    background: #fff;
-    padding: 5px 10px;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Descrição */
-.description {
-    white-space: pre-wrap;
-    margin-top: 10px;
-    font-size: 0.95em;
+.message-expanded .description {
+    font-size: 0.9em;
     color: #555;
+    margin-bottom: 10px;
 }
 
-/* Links */
-a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #2980b9;
-}
-
-/* Botões de ação */
-.action-button {
+.message-expanded .action-button {
     display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
+    margin-top: 10px;
+    padding: 8px 8px;
     background: linear-gradient(to right, #ff7f50, #ff6347);
     color: #fff;
     text-decoration: none;
@@ -86,24 +144,26 @@ a:hover {
     transition: background 0.3s ease;
 }
 
-.action-button:hover {
+.message-expanded .action-button:hover {
     background: linear-gradient(to right, #ff6347, #ff4500);
 }
 
-/* Contêiner de imagens */
-.image-container {
-    max-width: 100%;
-    margin: 15px 0;
-    text-align: center; /* Centralizar a imagem */
+/* Modo Tela Cheia */
+.message.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
 }
 
-/* Imagens */
-.message-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    max-height: 400px; /* Limitar a altura máxima */
-    object-fit: cover; /* Manter proporções da imagem */
-    display: block;
-    margin: 0 auto; /* Centralizar horizontalmente */
-}
