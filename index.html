@@ -29,30 +29,7 @@
 </p>
 </div>
 </div>
-<!-- Script para alternar entre versões compacta e expandida -->
-<script>
-        document.querySelectorAll('.message').forEach(message => {
-            message.addEventListener('click', () => {
-                const compactView = message.querySelector('.message-compact');
-                const expandedView = message.querySelector('.message-expanded');
-                const isFullscreen = message.classList.contains('fullscreen');
 
-                // Fechar todos os itens expandidos
-                document.querySelectorAll('.message').forEach(item => {
-                    item.classList.remove('fullscreen');
-                    item.querySelector('.message-expanded').style.display = 'none';
-                    item.querySelector('.message-compact').style.display = 'block';
-                });
-
-                if (!isFullscreen) {
-                    // Abrir o item clicado em tela cheia
-                    message.classList.add('fullscreen');
-                    compactView.style.display = 'none';
-                    expandedView.style.display = 'block';
-                }
-            });
-        });
-    </script>
 
 <div class="message">
 <!-- Versão Compacta -->
@@ -84,4 +61,6 @@
 </div>
 </div>
 </div></body>
+<!-- Script para alternar entre versões compacta e expandida -->
+      <script src="script.js"></script>
 </html>
